@@ -1,0 +1,47 @@
+version: '2'
+
+services:
+  web:
+    container_name: osp-web
+    build:
+      context: ./osp-web
+      dockerfile: Dockerfile
+    volumes:
+      - ./osp-web:/app
+      - /app/node_modules
+    environment:
+      - API_PUBLIC_ENDPOINT=http://localhost:3001
+      - API_PRIVATE_ENDPOINT=http://api:3001      
+    ports:
+      - 3000:3000
+    command: bash -c "yarn && yarn dev"
+
+  api:
+    container_name: osp-api
+    build:
+      context: ./osp-api
+      dockerfile: Dockerfile
+    volumes:
+      - ./osp-api:/app
+      - /app/node_modules
+    environment:
+      - PORT=3001
+      - REDIS_HOST=redis
+      - MONGO_CONNECTION_STR=mongodb://mongo:27017/osp_dev
+    ports:
+      - 3001:3001
+      - 9229:9229
+    command: bash -c "yarn && yarn dev"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'  
+
+  # redis:
+  #   image: "redis:alpine"
+  #   ports:
+  #     - 6379:6379
+

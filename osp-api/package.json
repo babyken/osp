@@ -1,0 +1,24 @@
+{
+  "name": "osp-api",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon --inspect=0.0.0.0:9229 src/app.js"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "express-winston": "^4.1.0",
+    "http-errors": "~1.6.3",
+    "json2csv": "^5.0.7",
+    "moment": "^2.29.1",
+    "mongoose": "^5.10.11",
+    "winston": "^3.3.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}

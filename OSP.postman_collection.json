@@ -1,0 +1,253 @@
+{
+	"info": {
+		"_postman_id": "821629c0-4214-49c0-a30b-c8a07e672a1e",
+		"name": "OSP",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Retrieve All Surveys",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/survey",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Single Survey",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/survey/toke1",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"survey",
+						"toke1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Survey",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\":\"toke1\",\n    \"title\": \"Cheesecake taste meow\",\n    \"questions\" : [\n        {\n            \"title\": \"do you like cheesecake meow?\",\n            \"format\" :\"Textbox\"\n        }\n    ]\n\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/survey",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Survey",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\":\"toke1\",\n    \"title\": \"Cheesecake taste meow\",\n    \"questions\" : [\n        {\n            \"title\": \"Diablo is heading to town\",\n            \"format\" :\"Textbox\"\n        }\n    ]\n\n    \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/survey",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"survey"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Survey",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/survey/toke1",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"survey",
+						"toke1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Retrieve All Responses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_HOST}}/response",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"response"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Response CSV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{API_HOST}}/response/csv",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"response",
+						"csv"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create a Response",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"survey\": \"62a7f481b7350f00ea1cd0fe\",\n    \"token\" :\"toke1\",\n    \"answers\" :[\n        \"Hello meow\",\n        5\n    ]\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{API_HOST}}/response",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"response"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete a Response",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{API_HOST}}/response/62a801d49372d9011a3fe829",
+					"host": [
+						"{{API_HOST}}"
+					],
+					"path": [
+						"response",
+						"62a801d49372d9011a3fe829"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "API_HOST",
+			"value": "localhost:3001",
+			"type": "default"
+		}
+	]
+}
