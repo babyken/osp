@@ -1,13 +1,13 @@
 ## Description
 Online survey platform is a showcase for CRUD using expressjs with vuejs as frontend.
 
-##Setup
+## Setup
 1. Install Docker
 2. run `docker compose up` at root folder, i.e. the folder with docker-compose.yml
 
 ## Usage
 ### Frontend 
-####Public
+#### Public
 http://localhost:3000
 
 #### Admin
